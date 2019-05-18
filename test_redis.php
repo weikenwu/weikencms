@@ -1,11 +1,11 @@
 <?php
 /* 这里替换为连接的实例host和port */
-$host = "101.37.67.145";
+$host = "";
 $port = 6379;
 
 /* 这里替换为实例id和实例password */
-$user = "r-bp1fe2213522a3f4";
-$pwd = "Peak_info";
+$user = "";
+$pwd = "";
 
 $redis = new Redis();
 if ($redis->connect($host, $port) == false) {
