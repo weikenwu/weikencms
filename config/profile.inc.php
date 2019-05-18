@@ -1,6 +1,6 @@
 <?php
 	//网站的配置
-	define('WEBNAME', 'WEB俱乐部');
+	define('WEBNAME', 'weikenCMS系统');
 	//系统分页广告配置
 	define('PAGE_SIZE', 10);//每页显示多少条
 	define('ARTICLE_SIZE', 8);

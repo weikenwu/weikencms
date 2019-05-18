@@ -42,21 +42,32 @@ class Templates
         }
         //在编译之前是否加入参数
         if(!empty($_SERVER['QUERY_STRING'])){
-            $_file.=$_SERVER['QUERY_STRING'];
+            $_file_query.=$_SERVER['QUERY_STRING'];
         }
         // 生成编译文件
-        $_parFile = TPL_C_DIR . md5($_file) . $_file . '.php';
+        //$_parFile = TPL_C_DIR . md5($_file) . $_file . '.php';
         // 缓存文件
-        $_cacheFile = CACHE . md5($_file) . $_file . '.html';
+        $_cacheFile = CACHE . md5($_file) . $_file . $_file_query .'.html';
         // 第二次执行的时候
+//         if (IS_CACHE) {
+//             if (file_exists($_cacheFile) && file_exists($_parFile)) {
+//                 echo '有编译文件和缓存文件';
+//                 if (filemtime($_parFile) >= filemtime($_tplFile) && filemtime($_cacheFile) >= filemtime($_parFile)) {
+//                     echo '载入缓存文件';
+//                     // 载入缓存文件
+//                     include $_cacheFile;
+//                     exit();
+//                 }
+//             }
+//         }
         if (IS_CACHE) {
-            if (file_exists($_cacheFile) && file_exists($_parFile)) {
-                if (filemtime($_parFile) >= filemtime($_tplFile) && filemtime($_cacheFile) >= filemtime($_parFile)) {
-                    echo '载入缓存文件';
+            //echo $_cacheFile;
+            if (file_exists($_cacheFile)) {
+                    echo '直接载入缓存文件';
                     // 载入缓存文件
                     include $_cacheFile;
                     exit();
-                }
+           
             }
         }
     }

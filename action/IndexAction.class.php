@@ -63,7 +63,7 @@ class IndexAction extends Action{
         $this->_tpl->assign('TopId',$_object->id);
         
         $_object=$this->_mode->getNewTopList();
-        Tool::subStr($_object, 'title', 15, 'utf-8');
+        Tool::subStr($_object, 'title', 14, 'utf-8');
         Tool::objDate($_object, 'date');
         if($_object){
             $_i=1;

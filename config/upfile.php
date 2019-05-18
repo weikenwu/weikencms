@@ -7,7 +7,7 @@
 </head>
 <body id="main">
 <form method="post" action="../config/upload.php" enctype="multipart/form-data" style="text-align:center;margin:30px;">
-	<input type="hidden" name="MAX_FILE_SIZE" value="204800"/>
+	<input type="hidden" name="MAX_FILE_SIZE" value="304800"/>
 	<input type="hidden" name="size" value="<?php echo $_GET['size'] ?>"/>
 	<input type="hidden" name="type" value="<?php echo $_GET['type'] ?>"/>
 	<input type="file" name="pic"/>

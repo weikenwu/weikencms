@@ -5,6 +5,7 @@ global $_tpl,$_cache;
 //前台专用
 if(IS_CACHE && !$_cache->noCache()){//静态缓存处理
     ob_start();
+    //echo "走静态";
     $_tpl->cache(Tool::tplName().'.tpl');
 }
 
